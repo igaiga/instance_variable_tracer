@@ -1,5 +1,4 @@
-## Ver 0.0.1
+## Ver 0.1.0
 
 - 2019.6.29
 - initial release
-
