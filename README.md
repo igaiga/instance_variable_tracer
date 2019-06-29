@@ -1,8 +1,6 @@
 # InstanceVariableTracer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/instance_variable_tracer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+To trace assignment to instance variable. This is experimental implement.
 
 ## Installation
 
@@ -14,21 +12,27 @@ gem 'instance_variable_tracer'
 
 And then execute:
 
-    $ bundle
+  $ bundle
 
 Or install it yourself as:
 
-    $ gem install instance_variable_tracer
+  $ gem install instance_variable_tracer
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+InstanceVariableTracer.start(target_instance_variable_name: "@books")
+```
+
+When @books instance variable is assign, this InstanceVariableTracer print logs like this (using p method).
+
+```
+@books is assigned in path_to_app/app/controllers/books_controller.rb:7 index BooksController
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+The main file is lib/instance_variable_tracer.rb
 
 ## Contributing
 
